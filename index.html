@@ -1,0 +1,252 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>X & O</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <section class="xo">
+      <!-- First turn -->
+      <!-- First row -->
+      <input id="square1-1-1" type="checkbox" class="player1 firstRow firstColumn firstDiagonal turn-1" />
+      <label for="square1-1-1" class="squareLabel top left turn-1"></label>
+      <input id="square1-1-2" type="checkbox" class="player1 firstRow secondColumn turn-1" />
+      <label for="square1-1-2" class="squareLabel top middle turn-1"></label>
+      <input id="square1-1-3" type="checkbox" class="player1 firstRow thirdColumn secondDiagonal turn-1" />
+      <label for="square1-1-3" class="squareLabel top right turn-1"></label>
+
+      <!-- Second row -->
+      <input id="square1-2-1" type="checkbox" class="player1 secondRow firstColumn turn-1" />
+      <label for="square1-2-1" class="squareLabel center left turn-1"></label>
+      <input id="square1-2-2" type="checkbox" class="player1 secondRow secondColumn firstDiagonal secondDiagonal turn-1" />
+      <label for="square1-2-2" class="squareLabel center middle turn-1"></label>
+      <input id="square1-2-3" type="checkbox" class="player1 secondRow thirdColumn turn-1" />
+      <label for="square1-2-3" class="squareLabel center right turn-1"></label>
+
+      <!-- Third row -->
+      <input id="square1-3-1" type="checkbox" class="player1 thirdRow firstColumn secondDiagonal turn-1" />
+      <label for="square1-3-1" class="squareLabel bottom left turn-1"></label>
+      <input id="square1-3-2" type="checkbox" class="player1 thirdRow secondColumn turn-1" />
+      <label for="square1-3-2" class="squareLabel bottom middle turn-1"></label>
+      <input id="square1-3-3" type="checkbox" class="player1 thirdRow thirdColumn firstDiagonal turn-1" />
+      <label for="square1-3-3" class="squareLabel bottom right turn-1"></label>
+
+      <!-- Second turn -->
+      <!-- First row -->
+      <input id="square2-1-1" type="checkbox" class="player2 firstRow firstColumn firstDiagonal turn-2" />
+      <label for="square2-1-1" class="squareLabel top left turn-2"></label>
+      <input id="square2-1-2" type="checkbox" class="player2 firstRow secondColumn turn-2" />
+      <label for="square2-1-2" class="squareLabel top middle turn-2"></label>
+      <input id="square2-1-3" type="checkbox" class="player2 firstRow thirdColumn secondDiagonal turn-2" />
+      <label for="square2-1-3" class="squareLabel top right turn-2"></label>
+
+      <!-- Second row -->
+      <input id="square2-2-1" type="checkbox" class="player2 secondRow firstColumn turn-2" />
+      <label for="square2-2-1" class="squareLabel center left turn-2"></label>
+      <input id="square2-2-2" type="checkbox" class="player2 secondRow secondColumn firstDiagonal secondDiagonal turn-2" />
+      <label for="square2-2-2" class="squareLabel center middle turn-2"></label>
+      <input id="square2-2-3" type="checkbox" class="player2 secondRow thirdColumn turn-2" />
+      <label for="square2-2-3" class="squareLabel center right turn-2"></label>
+
+      <!-- Third row -->
+      <input id="square2-3-1" type="checkbox" class="player2 thirdRow firstColumn secondDiagonal turn-2" />
+      <label for="square2-3-1" class="squareLabel bottom left turn-2"></label>
+      <input id="square2-3-2" type="checkbox" class="player2 thirdRow secondColumn turn-2" />
+      <label for="square2-3-2" class="squareLabel bottom middle turn-2"></label>
+      <input id="square2-3-3" type="checkbox" class="player2 thirdRow thirdColumn firstDiagonal turn-2" />
+      <label for="square2-3-3" class="squareLabel bottom right turn-2"></label>
+
+      <!-- Third turn -->
+      <!-- First row -->
+      <input id="square3-1-1" type="checkbox" class="player1 firstRow firstColumn firstDiagonal turn-3" />
+      <label for="square3-1-1" class="squareLabel top left turn-3"></label>
+      <input id="square3-1-2" type="checkbox" class="player1 firstRow secondColumn turn-3" />
+      <label for="square3-1-2" class="squareLabel top middle turn-3"></label>
+      <input id="square3-1-3" type="checkbox" class="player1 firstRow thirdColumn secondDiagonal turn-3" />
+      <label for="square3-1-3" class="squareLabel top right turn-3"></label>
+
+      <!-- Second row -->
+      <input id="square3-2-1" type="checkbox" class="player1 secondRow firstColumn turn-3" />
+      <label for="square3-2-1" class="squareLabel center left turn-3"></label>
+      <input id="square3-2-2" type="checkbox" class="player1 secondRow secondColumn firstDiagonal secondDiagonal turn-3" />
+      <label for="square3-2-2" class="squareLabel center middle turn-3"></label>
+      <input id="square3-2-3" type="checkbox" class="player1 secondRow thirdColumn turn-3" />
+      <label for="square3-2-3" class="squareLabel center right turn-3"></label>
+
+      <!-- Third row -->
+      <input id="square3-3-1" type="checkbox" class="player1 thirdRow firstColumn secondDiagonal turn-3" />
+      <label for="square3-3-1" class="squareLabel bottom left turn-3"></label>
+      <input id="square3-3-2" type="checkbox" class="player1 thirdRow secondColumn turn-3" />
+      <label for="square3-3-2" class="squareLabel bottom middle turn-3"></label>
+      <input id="square3-3-3" type="checkbox" class="player1 thirdRow thirdColumn firstDiagonal turn-3" />
+      <label for="square3-3-3" class="squareLabel bottom right turn-3"></label>
+
+      <!-- Fourth turn -->
+      <!-- First row -->
+      <input id="square4-1-1" type="checkbox" class="player2 firstRow firstColumn firstDiagonal turn-4" />
+      <label for="square4-1-1" class="squareLabel top left turn-4"></label>
+      <input id="square4-1-2" type="checkbox" class="player2 firstRow secondColumn turn-4" />
+      <label for="square4-1-2" class="squareLabel top middle turn-4"></label>
+      <input id="square4-1-3" type="checkbox" class="player2 firstRow thirdColumn secondDiagonal turn-4" />
+      <label for="square4-1-3" class="squareLabel top right turn-4"></label>
+
+      <!-- Second row -->
+      <input id="square4-2-1" type="checkbox" class="player2 secondRow firstColumn turn-4" />
+      <label for="square4-2-1" class="squareLabel center left turn-4"></label>
+      <input id="square4-2-2" type="checkbox" class="player2 secondRow secondColumn firstDiagonal secondDiagonal turn-4" />
+      <label for="square4-2-2" class="squareLabel center middle turn-4"></label>
+      <input id="square4-2-3" type="checkbox" class="player2 secondRow thirdColumn turn-4" />
+      <label for="square4-2-3" class="squareLabel center right turn-4"></label>
+
+      <!-- Third row -->
+      <input id="square4-3-1" type="checkbox" class="player2 thirdRow firstColumn secondDiagonal turn-4" />
+      <label for="square4-3-1" class="squareLabel bottom left turn-4"></label>
+      <input id="square4-3-1" type="checkbox" class="player2 thirdRow secondColumn turn-4" />
+      <label for="square4-3-2" class="squareLabel bottom middle turn-4"></label>
+      <input id="square4-3-3" type="checkbox" class="player2 thirdRow thirdColumn firstDiagonal turn-4" />
+      <label for="square4-3-3" class="squareLabel bottom right turn-4"></label>
+
+      <!-- Fifth turn -->
+      <!-- First row -->
+      <input id="square5-1-1" type="checkbox" class="player1 firstRow firstColumn firstDiagonal turn-5" />
+      <label for="square5-1-1" class="squareLabel top left turn-5"></label>
+      <input id="square5-1-2" type="checkbox" class="player1 firstRow secondColumn turn-5" />
+      <label for="square5-1-2" class="squareLabel top middle turn-5"></label>
+      <input id="square5-1-3" type="checkbox" class="player1 firstRow thirdColumn secondDiagonal turn-5" />
+      <label for="square5-1-3" class="squareLabel top right turn-5"></label>
+
+      <!-- Second row -->
+      <input id="square5-2-1" type="checkbox" class="player1 secondRow firstColumn turn-5" />
+      <label for="square5-2-1" class="squareLabel center left turn-5"></label>
+      <input id="square5-2-2" type="checkbox" class="player1 secondRow secondColumn firstDiagonal secondDiagonal turn-5" />
+      <label for="square5-2-2" class="squareLabel center middle turn-5"></label>
+      <input id="square5-2-3" type="checkbox" class="player1 secondRow thirdColumn turn-5" />
+      <label for="square5-2-3" class="squareLabel center right turn-5"></label>
+
+      <!-- Third row -->
+      <input id="square5-3-1" type="checkbox" class="player1 thirdRow firstColumn secondDiagonal turn-5" />
+      <label for="square5-3-1" class="squareLabel bottom left turn-5"></label>
+      <input id="square5-3-2" type="checkbox" class="player1 thirdRow secondColumn turn-5" />
+      <label for="square5-3-2" class="squareLabel bottom middle turn-5"></label>
+      <input id="square5-3-3" type="checkbox" class="player1 thirdRow thirdColumn firstDiagonal turn-5" />
+      <label for="square5-3-3" class="squareLabel bottom right turn-5"></label>
+
+      <!-- Sixth turn -->
+      <!-- First row -->
+      <input id="square6-1-1" type="checkbox" class="player2 firstRow firstColumn firstDiagonal turn-6" />
+      <label for="square6-1-1" class="squareLabel top left turn-6"></label>
+      <input id="square6-1-2" type="checkbox" class="player2 firstRow secondColumn turn-6" />
+      <label for="square6-1-2" class="squareLabel top middle turn-6"></label>
+      <input id="square6-1-3" type="checkbox" class="player2 firstRow thirdColumn secondDiagonal turn-6" />
+      <label for="square6-1-3" class="squareLabel top right turn-6"></label>
+
+      <!-- Second row -->
+      <input id="square6-2-1" type="checkbox" class="player2 secondRow firstColumn turn-6" />
+      <label for="square6-2-1" class="squareLabel center left turn-6"></label>
+      <input id="square6-2-2" type="checkbox" class="player2 secondRow secondColumn firstDiagonal secondDiagonal turn-6" />
+      <label for="square6-2-2" class="squareLabel center middle turn-6"></label>
+      <input id="square6-2-3" type="checkbox" class="player2 secondRow thirdColumn turn-6" />
+      <label for="square6-2-3" class="squareLabel center right turn-6"></label>
+
+      <!-- Third row -->
+      <input id="square6-3-1" type="checkbox" class="player2 thirdRow firstColumn secondDiagonal turn-6" />
+      <label for="square6-3-1" class="squareLabel bottom left turn-6"></label>
+      <input id="square6-3-2" type="checkbox" class="player2 thirdRow secondColumn turn-6" />
+      <label for="square6-3-2" class="squareLabel bottom middle turn-6"></label>
+      <input id="square6-3-3" type="checkbox" class="player2 thirdRow thirdColumn firstDiagonal turn-6" />
+      <label for="square6-3-3" class="squareLabel bottom right turn-6"></label>
+
+      <!-- Seventh turn -->
+      <!-- First row -->
+      <input id="square7-1-1" type="checkbox" class="player1 firstRow firstColumn firstDiagonal turn-7" />
+      <label for="square7-1-1" class="squareLabel top left turn-7"></label>
+      <input id="square7-1-2" type="checkbox" class="player1 firstRow secondColumn turn-7" />
+      <label for="square7-1-2" class="squareLabel top middle turn-7"></label>
+      <input id="square7-1-3" type="checkbox" class="player1 firstRow thirdColumn secondDiagonal turn-7" />
+      <label for="square7-1-3" class="squareLabel top right turn-7"></label>
+
+      <!-- Second row -->
+      <input id="square7-2-1" type="checkbox" class="player1 secondRow firstColumn turn-7" />
+      <label for="square7-2-1" class="squareLabel center left turn-7"></label>
+      <input id="square7-2-2" type="checkbox" class="player1 secondRow secondColumn firstDiagonal secondDiagonal turn-7" />
+      <label for="square7-2-2" class="squareLabel center middle turn-7"></label>
+      <input id="square7-2-3" type="checkbox" class="player1 secondRow thirdColumn turn-7" />
+      <label for="square7-2-3" class="squareLabel center right turn-7"></label>
+
+      <!-- Third row -->
+      <input id="square7-3-1" type="checkbox" class="player1 thirdRow firstColumn secondDiagonal turn-7" />
+      <label for="square7-3-1" class="squareLabel bottom left turn-7"></label>
+      <input id="square7-3-2" type="checkbox" class="player1 thirdRow secondColumn turn-7" />
+      <label for="square7-3-2" class="squareLabel bottom middle turn-7"></label>
+      <input id="square7-3-3" type="checkbox" class="player1 thirdRow thirdColumn firstDiagonal turn-7" />
+      <label for="square7-3-3" class="squareLabel bottom right turn-7"></label>
+
+      <!-- Eighth turn -->
+      <!-- First row -->
+      <input id="square8-1-1" type="checkbox" class="player2 firstRow firstColumn firstDiagonal turn-8" />
+      <label for="square8-1-1" class="squareLabel top left turn-8"></label>
+      <input id="square8-1-2" type="checkbox" class="player2 firstRow secondColumn turn-8" />
+      <label for="square8-1-2" class="squareLabel top middle turn-8"></label>
+      <input id="square8-1-3" type="checkbox" class="player2 firstRow thirdColumn secondDiagonal turn-8" />
+      <label for="square8-1-3" class="squareLabel top right turn-8"></label>
+
+      <!-- Second row -->
+      <input id="square8-2-1" type="checkbox" class="player2 secondRow firstColumn turn-8" />
+      <label for="square8-2-1" class="squareLabel center left turn-8"></label>
+      <input id="square8-2-2" type="checkbox" class="player2 secondRow secondColumn firstDiagonal secondDiagonal turn-8" />
+      <label for="square8-2-2" class="squareLabel center middle turn-8"></label>
+      <input id="square8-2-3" type="checkbox" class="player2 secondRow thirdColumn turn-8" />
+      <label for="square8-2-3" class="squareLabel center right turn-8"></label>
+
+      <!-- Third row -->
+      <input id="square8-3-1" type="checkbox" class="player2 thirdRow firstColumn secondDiagonal turn-8" />
+      <label for="square8-3-1" class="squareLabel bottom left turn-8"></label>
+      <input id="square8-3-2" type="checkbox" class="player2 thirdRow secondColumn turn-8" />
+      <label for="square8-3-2" class="squareLabel bottom middle turn-8"></label>
+      <input id="square8-3-3" type="checkbox" class="player2 thirdRow thirdColumn firstDiagonal turn-8" />
+      <label for="square8-3-3" class="squareLabel bottom right turn-8"></label>
+
+      <!-- Ninth turn -->
+      <!-- First row -->
+      <input id="square9-1-1" type="checkbox" class="player1 firstRow firstColumn firstDiagonal turn-9" />
+      <label for="square9-1-1" class="squareLabel top left turn-9"></label>
+      <input id="square9-1-2" type="checkbox" class="player1 firstRow secondColumn turn-9" />
+      <label for="square9-1-2" class="squareLabel top middle turn-9"></label>
+      <input id="square9-1-3" type="checkbox" class="player1 firstRow thirdColumn secondDiagonal turn-9" />
+      <label for="square9-1-3" class="squareLabel top right turn-9"></label>
+
+      <!-- Second row -->
+      <input id="square9-2-1" type="checkbox" class="player1 secondRow firstColumn turn-9" />
+      <label for="square9-2-1" class="squareLabel center left turn-9"></label>
+      <input id="square9-2-2" type="checkbox" class="player1 secondRow secondColumn firstDiagonal secondDiagonal turn-9" />
+      <label for="square9-2-2" class="squareLabel center middle turn-9"></label>
+      <input id="square9-2-3" type="checkbox" class="player1 secondRow thirdColumn turn-9" />
+      <label for="square9-2-3" class="squareLabel center right turn-9"></label>
+
+      <!-- Third row -->
+      <input id="square9-3-1" type="checkbox" class="player1 thirdRow firstColumn secondDiagonal turn-9" />
+      <label for="square9-3-1" class="squareLabel bottom left turn-9"></label>
+      <input id="square9-3-2" type="checkbox" class="player1 thirdRow secondColumn turn-9" />
+      <label for="square9-3-2" class="squareLabel bottom middle turn-9"></label>
+      <input id="square9-3-3" type="checkbox" class="player1 thirdRow thirdColumn firstDiagonal turn-9" />
+      <label for="square9-3-3" class="squareLabel bottom right turn-9"></label>
+      <div class="topWin"></div>
+      <div class="centerWin"></div>
+      <div class="bottomWin"></div>
+      <div class="leftWin"></div>
+      <div class="middleWin"></div>
+      <div class="rightWin"></div>
+      <div class="firstDiagonalWin"></div>
+      <div class="secondDiagonalWin"></div>
+      <div class="finish">
+          <a class="replay" href=""></a>
+      </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+/* Third party */
+@import '../bower_components/font-awesome/scss/font-awesome';
+
+/* Variables */
+$bg: #323440;
+$text: #fff;
+$cellBorder: #56596a;
+$refresh: "\f021";
+$iconSize: 72px;
+$player1:  "\f00d";
+$player1Color: #f0336c;
+$player2:  "\f10c";
+$player2Color: #fdbb4b;
+$drawColor: #4bbbc1;
+
+/* Base */
+body {
+    background-color: $bg;
+    color: $text;
+    font-family: 'Open Sans';
+}
+
+/* Checks */
+input {
+    display: none;
+
+    /* Put each checked square above the rest (9 turns +1) */
+    &:checked + label {
+        cursor: default;
+        z-index: 10 !important;
+
+        /* Make sure we always show the checked labels */
+        &:after {
+            opacity: 1
+        }
+    }
+}
+
+/* Holder */
+.xo {
+    height: 450px;
+    margin: 50px auto;
+    position: relative;
+    width: 450px;
+}
+
+/* Labels/squares */
+.squareLabel {
+    cursor: pointer;
+    display: none;
+    height: 150px;
+    position: absolute;
+    width: 150px;
+
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:after {
+        color: #fff;
+        left: 0;
+        font-family: 'FontAwesome';
+        font-size: $iconSize;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        top: 30px;
+        transition: opacity 0.3s;
+        width: 100%;
+    }
+}
+
+/* Label positioning */
+.left {
+    border-right: 1px solid $cellBorder;
+    left: 0;
+}
+
+.middle {
+    border-right: 1px solid $cellBorder;
+    left: 150px;
+}
+
+.right {
+    left: 300px;
+}
+
+.top {
+    top: 0;
+}
+
+.center {
+    border-top: 1px solid $cellBorder;
+    top: 150px;
+}
+
+.bottom {
+    border-top: 1px solid $cellBorder;
+    top: 300px;
+}
+
+/* Player 1 */
+.player1 + .squareLabel {
+    &:after {
+        color: $player1Color;
+        content: $player1;
+    }
+}
+
+/* Player 2 */
+.player2 + .squareLabel {
+    &:after {
+        color: $player2Color;
+        content: $player2;
+    }
+}
+
+/* Turn logic */
+
+/* Stack turns */
+@for $i from 1 through 9 {
+    .turn-#{$i} + label {
+        z-index: $i;
+    }
+}
+
+/* First turn */
+.turn-1 + label {
+    display: block;
+}
+
+/* Loop for all showing next turns */
+// Show next turn, once the current label has been :checked
+@for $i from 1 through 8 {
+    .turn-#{$i}:checked ~ .turn-#{$i+1} + label {
+        display: block;
+    }
+}
+
+/* Finishing logic */
+.finish {
+    bottom: 0px;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 11;
+    text-align: center;
+
+    &:after {
+        bottom: -50px;
+        color: $drawColor;
+        font-size: 28px;
+        font-weight: 100;
+        left: 0;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.replay {
+    bottom: -55px;
+    color: #fff;
+    display: block;
+    font-size: 30px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    width: 40px;
+    z-index: 13;
+
+    &:after {
+        content: $refresh;
+        font-family: 'FontAwesome';
+    }
+}
+
+
+/* Is it a tie? All 9 inputs are checked */
+input:checked ~ input:checked ~ input:checked ~
+input:checked ~ input:checked ~ input:checked ~
+input:checked ~ input:checked ~ input:checked ~ .finish {
+    display: block;
+
+    &:after {
+        content: 'It\'s a draw';
+    }
+}
+
+/* Strike throughs */
+.topWin, .middleWin, .rightWin, .leftWin, .centerWin, .bottomWin, .firstDiagonalWin, .secondDiagonalWin {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    height: 10px;
+    position: absolute;
+    transition: width 0.5s;
+    width: 0px;
+    z-index: 13;
+}
+
+.leftWin, .centerWin, .rightWin, .firstDiagonalWin {
+    transform-origin: 0 0;
+}
+
+.leftWin, .centerWin, .rightWin {
+    transform: rotate(90deg)
+}
+
+.topWin {
+    top: 70px;
+}
+
+.middleWin {
+    top: 220px;
+}
+
+.bottomWin {
+    top: 370px;
+}
+
+.leftWin {
+    left: 80px;
+}
+
+.centerWin {
+    left: 230px;
+}
+
+.rightWin {
+    left: 380px;
+}
+
+.firstDiagonalWin {
+    left: 70px;
+    top: 60px;
+    transform: rotate(45deg);
+}
+
+.secondDiagonalWin {
+    right: 60px;
+    top: 60px;
+    transform: rotate(-45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Check for winners - all victory types */
+@for $i from 1 through 2 {
+    .player#{$i}.firstColumn:checked ~ .player#{$i}.firstColumn:checked ~ .player#{$i}.firstColumn:checked  ~ .finish,
+    .player#{$i}.secondColumn:checked ~ .player#{$i}.secondColumn:checked ~ .player#{$i}.secondColumn:checked  ~ .finish,
+    .player#{$i}.thirdColumn:checked ~ .player#{$i}.thirdColumn:checked ~ .player#{$i}.thirdColumn:checked ~ .finish,
+    .player#{$i}.firstRow:checked ~ .player#{$i}.firstRow:checked ~ .player#{$i}.firstRow:checked  ~ .finish,
+    .player#{$i}.secondRow:checked ~ .player#{$i}.secondRow:checked ~ .player#{$i}.secondRow:checked  ~ .finish,
+    .player#{$i}.thirdRow:checked ~ .player#{$i}.thirdRow:checked ~ .player#{$i}.thirdRow:checked ~ .finish,
+    .player#{$i}.firstDiagonal:checked ~ .player#{$i}.firstDiagonal:checked ~ .player#{$i}.firstDiagonal:checked ~ .finish,
+    .player#{$i}.secondDiagonal:checked ~ .player#{$i}.secondDiagonal:checked ~ .player#{$i}.secondDiagonal:checked ~ .finish {
+        display: block;
+
+        &:after {
+            content: "Player #{$i} wins!" !important;
+        }
+    }
+
+    /* Victory sets for strikethroughs */
+    .player#{$i}.firstColumn:checked ~ .player#{$i}.firstColumn:checked ~ .player#{$i}.firstColumn:checked ~ .leftWin,
+    .player#{$i}.secondColumn:checked ~ .player#{$i}.secondColumn:checked ~ .player#{$i}.secondColumn:checked  ~ .centerWin,
+    .player#{$i}.thirdColumn:checked ~ .player#{$i}.thirdColumn:checked ~ .player#{$i}.thirdColumn:checked ~ .rightWin,
+    .player#{$i}.firstRow:checked ~ .player#{$i}.firstRow:checked ~ .player#{$i}.firstRow:checked  ~ .topWin,
+    .player#{$i}.secondRow:checked ~ .player#{$i}.secondRow:checked ~ .player#{$i}.secondRow:checked  ~ .middleWin,
+    .player#{$i}.thirdRow:checked ~ .player#{$i}.thirdRow:checked ~ .player#{$i}.thirdRow:checked ~ .bottomWin,
+    .player#{$i}.firstDiagonal:checked ~ .player#{$i}.firstDiagonal:checked ~ .player#{$i}.firstDiagonal:checked ~ .firstDiagonalWin,
+    .player#{$i}.secondDiagonal:checked ~ .player#{$i}.secondDiagonal:checked ~ .player#{$i}.secondDiagonal:checked ~ .secondDiagonalWin {
+        width: 450px;
+    }
+}
